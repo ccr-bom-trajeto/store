@@ -1,0 +1,63 @@
+
+<mat-toolbar  color='primary' >
+    <mat-toolbar-row style="height: auto;" fxLayoutAlign='space-evenly center'>
+        <section>
+            <p style="font-size: 12px;">UMA EMPRESA DO GRUPO CCR</p>
+            <img height="80px" src="../../assets/ccr.svg" alt="">
+        </section>
+        <img height="300px" src="../../assets/logo ccr - horizontal azul.svg" alt="" srcset="">
+        <button mat-icon-button><mat-icon style="font-size: 30px; width: 42px; height: 42px; text-align: center;">shopping_basket</mat-icon></button>
+    </mat-toolbar-row>
+    <mat-toolbar-row fxLayoutAlign='space-evenly center'>
+        <button mat-button routerLink='/produtos'  color='accent'>Produtos</button>
+        <button mat-button routerLink='/programa-pontos' color='accent'>Pograma de Pontos </button>
+        <button mat-button routerLink='/sobre' color='accent'>Sobre</button>
+    </mat-toolbar-row>
+</mat-toolbar>
+<router-outlet></router-outlet>
+<footer class="mat-toolbar mat-accent" style="padding: 10px;" fxLayoutAlign='center center'>
+    <section class="box" fxFlex.gt-sm=70 fxLayoutAlign="space-between start">
+        <section fxFlex=33 fxLayout="column" fxLayoutGap="10px">
+            <h2>Contato</h2>
+            <address fxLayout="column" fxLayoutGap="5px">
+                <span fxLayoutAlign="start center">
+                    <mat-icon>business</mat-icon> CCR Bom Trajeto
+                </span>
+                <span fxLayoutAlign="start center">
+                    <mat-icon>place</mat-icon> Av. Chedid Jafet, 222 - Vila Olímpia
+                </span>
+                <span fxLayoutAlign="start center">
+                    <mat-icon>map</mat-icon> São Paulo - SP, 04551-062
+                </span>
+
+                <a fxLayoutAlign="start center" href="tel:+551130485900">
+                    <mat-icon>phone</mat-icon> (11) 3048-5900
+                </a>
+            </address>
+
+            
+        </section>
+        <section fxFlex=33 fxLayout="column" class="services" fxLayoutGap="10px">
+            <h2>Serviços</h2>
+            <section fxLayout="column">
+                <button mat-button fxLayoutAlign="start" matTooltip="Portal da Transparencia">
+                    <mat-icon>shopping_cart</mat-icon>
+                    <span> Produtos </span>
+                </button>
+                <button mat-button fxLayoutAlign="start" matTooltip="Holerite On-line" >
+                    <mat-icon>business</mat-icon>
+                    <span> Sobre </span>
+                </button>
+                <a mat-button  fxLayoutAlign="start" matTooltip="Boletim">
+                    <mat-icon>policy</mat-icon>
+                    <span> Regulamento </span>
+                </a>
+                <a mat-button  fxLayoutAlign="start" matTooltip="Boletim">
+                    <mat-icon>headset_mic</mat-icon>
+                    <span> Suporte </span>
+                </a>
+            </section>
+        </section>
+    </section>
+
+</footer>

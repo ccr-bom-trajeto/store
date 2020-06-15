@@ -1,1 +1,53 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+$mat-bom-trajeto-amber: (
+  100: #f3c442,
+  200: #fff774,
+  300: #bd9400,
+  contrast: (
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+  )
+);
+$mat-bom-trajeto-blue: (
+    100: #054866,
+    200: #417394,
+    300: #00213b,
+    contrast: (
+      100: $light-primary-text,
+      200: $light-primary-text,
+      300: $light-primary-text,
+    )
+  );
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$store-bom-trajeto-primary: mat-palette($mat-bom-trajeto-amber, 100, 200, 300);
+$store-bom-trajeto-accent: mat-palette($mat-bom-trajeto-blue, 100, 200, 300);
+
+// The warn palette is optional (defaults to red).
+$store-bom-trajeto-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$store-bom-trajeto-theme: mat-light-theme($store-bom-trajeto-primary, $store-bom-trajeto-accent, $store-bom-trajeto-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($store-bom-trajeto-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

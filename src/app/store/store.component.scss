@@ -1,0 +1,28 @@
+address{
+    font-style: normal;
+    a {
+        text-decoration: none;
+        color: white;
+    }
+    span, a {
+        font-size: 16px;
+        .mat-icon{
+            margin-right: 16px;
+        }
+    }
+}
+.footer-botton {
+}
+footer {
+    min-height: 50%;
+    .box {
+        padding: 25px;
+    }
+    .services {
+        .mat-button {           
+            .mat-icon {
+                margin-right: 16px;
+            }
+        }
+    }
+}

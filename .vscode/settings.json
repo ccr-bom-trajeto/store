@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/49fed458-fb98-4391-a9b2-b4c2d6c8d9b7/resourceGroups/bom-trajeto/providers/Microsoft.Web/sites/loja-bom-trajeto",
+    "appService.deploySubpath": "."
+}

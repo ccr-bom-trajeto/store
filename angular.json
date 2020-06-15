@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/store-bom-trajeto",
+            "outputPath": "dist/store-bom-trajeto/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -121,8 +121,59 @@
               "devServerTarget": "store-bom-trajeto:serve:production"
             }
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/store-bom-trajeto/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": true
+            }
+          }
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "options": {
+            "browserTarget": "store-bom-trajeto:build",
+            "serverTarget": "store-bom-trajeto:server"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "store-bom-trajeto:build:production",
+              "serverTarget": "store-bom-trajeto:server:production"
+            }
+          }
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "browserTarget": "store-bom-trajeto:build:production",
+            "serverTarget": "store-bom-trajeto:server:production",
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {}
+          }
         }
       }
-    }},
-  "defaultProject": "store-bom-trajeto"
+    }
+  },
+  "defaultProject": "store-bom-trajeto",
+  "cli": {
+    "analytics": false
+  }
 }
